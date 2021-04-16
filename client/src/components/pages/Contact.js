@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
+const cors = require("cors");
+const nodemailer = require("nodemailer");
+// const transporter = require("./config");
+
 function Contact() {
   const [contactInfo, setContactInfo] = useState(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -30,12 +35,11 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    fetchContactInfo();
     setIsSubmitting(true);
-    await postContactInfo(form);
+    const res = await postContactInfo(form);
     // setIsSubmitting(false);
     setForm({ name: "", email: "", message: "" });
-
-    fetchContactInfo();
   };
 
   return (
