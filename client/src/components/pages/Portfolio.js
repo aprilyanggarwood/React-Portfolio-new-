@@ -41,32 +41,39 @@ function Portfolio(slides) {
         </span>
 
         {/* <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
-      <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} /> */}
-        <a target="_blank " rel="noreferrer" href={SliderData[currImg].link}>
-          <div className="siderInner">
-            <div
-              className="left"
-              onClick={() => {
-                currImg > 0 && setCurrImg(currImg - 1);
-              }}
-            >
-              <FaArrowAltCircleLeft style={{ fontSize: 30 }} />
-            </div>
+        <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} /> */}
 
-            <img className="image" src={SliderData[currImg].image} alt="" />
-            {/* </a> */}
-            {/* <div className="center"></div> */}
-            {/* <h1 className="title">{SliderData[currImg].title}</h1> */}
-            <div
-              className="right"
-              onClick={() => {
-                currImg < SliderData.length - 1 && setCurrImg(currImg + 1);
-              }}
+        <div className="siderInner">
+          <div
+            className="left"
+            onClick={() => {
+              currImg > 0 && setCurrImg(currImg - 1);
+            }}
+          >
+            <FaArrowAltCircleLeft style={{ fontSize: 30 }} />
+          </div>
+          <div>
+            <a
+              target="_blank "
+              rel="noreferrer"
+              href={SliderData[currImg].link}
             >
-              <FaArrowAltCircleRight style={{ fontSize: 30 }} />
-            </div>
+              <img className="image" src={SliderData[currImg].image} alt="" />
+              {/* </a> */}
+              {/* <div className="center"></div> */}
+              {/* <h1 className="title">{SliderData[currImg].title}</h1> */}
+            </a>
+          </div>
+          <div
+            className="right"
+            onClick={() => {
+              currImg < SliderData.length - 1 && setCurrImg(currImg + 1);
+            }}
+          >
+            <FaArrowAltCircleRight style={{ fontSize: 30 }} />
+          </div>
 
-            {/* {SliderData.map((slide, index) => {
+          {/* {SliderData.map((slide, index) => {
         return (
           <div
             className={index === current ? "slide active" : "slide"}
@@ -80,8 +87,7 @@ function Portfolio(slides) {
           </div>
         );
       })} */}
-          </div>
-        </a>
+        </div>
       </section>
     </>
   );

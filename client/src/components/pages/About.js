@@ -4,6 +4,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import aboutImg from "../image/aboutimage.jpeg";
+import AllPagesPDFViewer from "../pdf/all-pages";
+import ResumePDF from "../pdf/AprilResumeforschool.pdf";
+
 // import Sidebar from "../Sidebar/index";
 // import Navbar from "../Navbar/Nav";
 
@@ -28,7 +31,17 @@ function About() {
                   className="aboutmebackground p-4"
                   style={{ background: "yellow", marginLeft: "50px" }}
                 >
-                  <h1>About Me</h1>
+                  <h1>
+                    About Me
+                    <span>
+                      <div className="all-page-container">
+                        <a target="_blank" rel="noreferrer" href={ResumePDF}>
+                          {/* <AllPagesPDFViewer pdf={ResumePDF} /> */}
+                          Resume
+                        </a>
+                      </div>
+                    </span>
+                  </h1>
                   <hr />
                   <Image
                     height={300}
